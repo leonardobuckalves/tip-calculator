@@ -26,7 +26,7 @@ balanceSection.innerHTML = `
 
 const chartSection = document.createElement('div');
 chartSection.setAttribute('id', 'container--chart-section');
-chartSection.classList.add('flex', 'spaced');
+chartSection.classList.add('flex', 'center', 'spaced');
 chartSection.innerHTML = `
     <div>
         <div>

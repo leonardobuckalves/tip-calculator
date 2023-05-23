@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: bisque;
+}
+
+#container--main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container--balance {
+    background-color: salmon;
+    border-radius: 10px;
+    color: white;
+}
+
+#container--chart-section {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.spaced {
+    padding: .5rem;
+    margin: .5rem;
+}
+
+.flex {
+    display: flex;
+}
+
+#container--chart-section-bottom {
+    display: flex;
+    flex-direction: row;
+}

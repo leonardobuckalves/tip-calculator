@@ -24,14 +24,26 @@ balanceSection.innerHTML = `
     </div>
 `
 
+const chart = `
+    <div class="flex row">
+        <div class="spaced">mon</div>
+        <div class="spaced">tue</div>
+        <div class="spaced">wed</div>
+        <div class="spaced">thu</div>
+        <div class="spaced">fri</div>
+        <div class="spaced">sat</div>
+        <div class="spaced">sun</div>
+    </div>
+`
+
 const chartSection = document.createElement('div');
 chartSection.setAttribute('id', 'container--chart-section');
 chartSection.classList.add('flex', 'center', 'spaced');
 chartSection.innerHTML = `
     <div>
         <div>
-            <div class="spaced">Spending - Last 7 days</div>
-            <div class="spaced">Chart</div>     
+            <div class="spaced"><h3>Spending - Last 7 days</h3></div>
+            <div class="spaced">${chart}</div>     
         </div>
         <div id="container--chart-section-bottom" class="spaced">
             <div>

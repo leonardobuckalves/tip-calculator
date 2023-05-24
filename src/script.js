@@ -9,18 +9,19 @@ main.setAttribute('id', 'container--main');
 
 const balanceSection = document.createElement('div');
 balanceSection.setAttribute('id', 'container--balance');
-balanceSection.classList.add('flex', 'spaced');
+balanceSection.classList.add('flex', 'center', 'spaced');
 balanceSection.innerHTML = `
     <div class="spaced">
         <div>
             My balance
         </div>
-        <div>
-            ${userBalance}
+        <div class="fontSize">
+            R$${userBalance}
         </div>
     </div>
-    <div class="spaced">
-        <img src="" alt="image of something">
+    <div class="flex spaced">
+        <div id="circle"></div>
+        <div id="circle-right"></div>
     </div>
 `
 
@@ -51,7 +52,7 @@ chartSection.innerHTML = `
                     Total this month
                 </div>
                 <div>
-                    ${userMonthBalance}
+                    R$${userMonthBalance}
                 </div>
             </div>
             <div>

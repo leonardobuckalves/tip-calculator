@@ -44,10 +44,37 @@ body {
 }
 
 .center {
+    align-items: center;
     justify-content: center;
 }
 
+.fontSize {
+    font-size: 36px;
+}
+
+#container--balance {
+    justify-content: space-around;
+}
 #container--chart-section-bottom {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
+
+#circle {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid;
+    z-index: 1;
+}
+
+#circle-right {
+    position: absolute;
+    left: 75%;
+    background: #3C2317;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    z-index: 0;
 }

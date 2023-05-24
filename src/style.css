@@ -36,12 +36,19 @@ body {
     background-color: #2E4F4F;
     margin: 1.3rem 1.3rem 1.3rem .5rem;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
     flex: 1;
 }
 
 #container__main_left {
     margin: 1.3rem .5rem 1.3rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex: 1;
 }
 
-
+#resetButtonDiv {
+    align-self: flex-end;
+}

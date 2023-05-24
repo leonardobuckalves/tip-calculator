@@ -13,14 +13,14 @@ rightSection.setAttribute('id', 'container__main_right');
 rightSection.classList.add('padded');
 
 const billDiv = document.createElement('div');
-const tipSelect = document.createElement('div');
-const peopleNum = document.createElement('div');
+const tipSelectDiv = document.createElement('div');
+const peopleNumDiv = document.createElement('div');
 
 billDiv.innerHTML = `
     <div>Bill</div>
     <div><input placeholder="$" /></div>
 `
-tipSelect.innerHTML = `
+tipSelectDiv.innerHTML = `
     <div>Select Tip %</div>
     <div>
         <button>5%</button>
@@ -31,7 +31,7 @@ tipSelect.innerHTML = `
         <input placeholder="Custom" />
     </div>
 `
-peopleNum.innerHTML = `
+peopleNumDiv.innerHTML = `
     <div>
         Number of People
     </div>
@@ -40,10 +40,11 @@ peopleNum.innerHTML = `
     </div>
 `
 
-const tipAmount = document.createElement('div');
-const totalPerPerson = document.createElement('div');
+const tipAmountDiv = document.createElement('div');
+const totalPerPersonDiv = document.createElement('div');
+const resetButtonDiv = document.createElement('div');
 
-tipAmount.innerHTML = `
+tipAmountDiv.innerHTML = `
     <div>
         Tip amount
     </div>
@@ -52,7 +53,7 @@ tipAmount.innerHTML = `
     </div>
 `
 
-totalPerPerson.innerHTML = `
+totalPerPersonDiv.innerHTML = `
     <div>
         Total
     </div>
@@ -61,6 +62,11 @@ totalPerPerson.innerHTML = `
     </div>
 `
 
+resetButtonDiv.innerHTML = `
+    <div id="resetButtonDiv">
+        <button>RESET</button>
+    </div>
+`
 
 root.appendChild(main);
 
@@ -68,8 +74,9 @@ main.appendChild(leftSection);
 main.appendChild(rightSection);
 
 leftSection.appendChild(billDiv);
-leftSection.appendChild(tipSelect);
-leftSection.appendChild(peopleNum);
+leftSection.appendChild(tipSelectDiv);
+leftSection.appendChild(peopleNumDiv);
 
-rightSection.appendChild(tipAmount);
-rightSection.appendChild(totalPerPerson);
+rightSection.appendChild(tipAmountDiv);
+rightSection.appendChild(totalPerPersonDiv);
+rightSection.appendChild(resetButtonDiv);

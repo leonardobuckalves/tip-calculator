@@ -16,12 +16,12 @@ const billDiv = document.createElement('div');
 const tipSelectDiv = document.createElement('div');
 const peopleNumDiv = document.createElement('div');
 
-let bill;
-let tipAmount;
-let numOfPeople;
+let bill = 0;
+let tipAmount = 0;
+let numOfPeople = 0;
 
 billDiv.innerHTML = `
-    <div id="billable">Bill ${bill}</div>
+    <div>Bill</div>
     <div><input type="text" placeholder="$" id="billInput" /></div>
 `
 tipSelectDiv.innerHTML = `
@@ -53,19 +53,19 @@ let totalPerPerson = 0;
 
 tipAmountDiv.innerHTML = `
     <div>
-        Tip amount
+        Tip amount p/ person
     </div>
     <div>
-        $${tipAmountPerPerson}
+        <span id="tipAmountPersonSpan">${tipAmountPerPerson}</span>
     </div>
 `
 
 totalPerPersonDiv.innerHTML = `
     <div>
-        Total
+        Total p/ person
     </div>
     <div>
-        $${totalPerPerson}
+        <span id="totalAmountPersonSpan">${totalPerPerson}</span>
     </div>
 `
 
@@ -89,12 +89,10 @@ rightSection.appendChild(totalPerPersonDiv);
 rightSection.appendChild(resetButtonDiv);
 
 const billInput = document.querySelector('#billInput'); 
-const billable = document.querySelector('#billable'); 
 
 billInput.addEventListener("input", () => {
     bill = billInput.value;
-    console.log(bill);
-    billable.innerHTML = bill;
+    updateValues();
 });
 
 const btn5 = document.querySelector('#btn-5');
@@ -106,50 +104,86 @@ const tipAmountInput = document.querySelector('#tipAmountInput');
 
 btn5.addEventListener("click", () => {
     tipAmount = btn5.value;
-    console.log(tipAmount);
+    clearPercentageInput();
+    updateValues();
 });
 
 btn10.addEventListener("click", () => {
     tipAmount = btn10.value;
-    console.log(tipAmount);
+    clearPercentageInput();
+    updateValues();
 });
 
 btn15.addEventListener("click", () => {
     tipAmount = btn15.value;
-    console.log(tipAmount);
+    clearPercentageInput();
+    updateValues();
 });
 
 btn25.addEventListener("click", () => {
     tipAmount = btn25.value;
-    console.log(tipAmount);
+    clearPercentageInput();
+    updateValues();
 });
 
 btn50.addEventListener("click", () => {
     tipAmount = btn50.value;
-    console.log(tipAmount);
+    clearPercentageInput();
+    updateValues();
 });
 
 tipAmountInput.addEventListener("input", () => {
     tipAmount = tipAmountInput.value;
-    console.log(tipAmount);
+    updateValues();
 });
 
 const numPeopleInput = document.querySelector('#numPeopleInput');
 numPeopleInput.addEventListener("input", () => {
     numOfPeople = numPeopleInput.value;
-    console.log(numOfPeople);
+    updateValues();
 });
 
-//Testing some functionalites
-function calcTip(billAmount, tipAmount, peopleAmount) {
-    return tipAmountPerPerson = ( billAmount * (tipAmount / 100) );
+const tipAmountPersonSpan = document.querySelector('#tipAmountPersonSpan');
+const totalAmountPersonSpan = document.querySelector('#totalAmountPersonSpan');
+
+const updateValues = () => {
+    calcTip(bill, tipAmount, numOfPeople);
+    calcBill(bill, numOfPeople, tipAmountPerPerson);
+    tipAmountPersonSpan.innerHTML = `$${tipAmountPerPerson}`;
+    totalAmountPersonSpan.innerHTML = `$${totalPerPerson}`;
 }
 
-function calcTipPerPerson(billAmount, tipAmount, peopleAmount) {
+const clearPercentageInput = () => {
+    tipAmountInput.value = "";
+}
+
+function calcBill(billAmount, peopleAmount, tipAmount) {
+    if (peopleAmount == NaN || peopleAmount == undefined || peopleAmount == 0 || peopleAmount == "")
+    {
+        peopleAmount = 1;
+    }
+    return totalPerPerson = (billAmount / peopleAmount) + tipAmount;
+}
+function calcTip(billAmount, tipAmount, peopleAmount) {
+    if (peopleAmount == NaN || peopleAmount == undefined || peopleAmount == 0 || peopleAmount == "")
+    {
+        peopleAmount = 1;
+    }
     return tipAmountPerPerson = ( billAmount * (tipAmount / 100) ) / peopleAmount;
+}
+
+const resetEverything = () => {
+    billInput.value = "";
+    tipAmountInput.value = "";
+    numPeopleInput.value = "";
+    bill = 0;
+    tipAmount = 0;
+    numOfPeople = 0;
+    tipAmountPerPerson = 0;
+    totalPerPerson = 0;
 }
 
 const btnReset = document.querySelector('#btn-reset');
 btnReset.addEventListener("click", () => {
-    console.log(calcTip(bill, tipAmount, numOfPeople));
+    resetEverything();
 });

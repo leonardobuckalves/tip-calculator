@@ -21,26 +21,26 @@ let tipAmount = 0;
 let numOfPeople = 0;
 
 billDiv.innerHTML = `
-    <div>Bill</div>
-    <div><input type="text" placeholder="$" id="billInput" /></div>
+    <div class ="marginTop05">Bill</div>
+    <div><input type="number" placeholder="$" id="billInput" /></div>
 `
 tipSelectDiv.innerHTML = `
-    <div>Select Tip %</div>
-    <div>
+    <div class ="marginTop05">Select Tip %</div>
+    <div id="tipSelectButtonsDiv">
         <button id="btn-5" value="5">5%</button>
         <button id="btn-10" value="10">10%</button>
         <button id="btn-15" value="15">15%</button>
         <button id="btn-25" value="25">25%</button>
-        <button id="btn-50" value="50">50%<button>
-        <input placeholder="Custom" id="tipAmountInput" />
+        <button id="btn-50" value="50">50%</button>
+        <input type="number" placeholder="Custom %" id="tipAmountInput" />
     </div>
 `
 peopleNumDiv.innerHTML = `
-    <div>
+    <div class ="marginTop05">
         Number of People
     </div>
     <div>
-        <input placeholder="0" id="numPeopleInput"/>
+        <input type="number" placeholder="0" id="numPeopleInput" />
     </div>
 `
 
@@ -181,6 +181,7 @@ const resetEverything = () => {
     numOfPeople = 0;
     tipAmountPerPerson = 0;
     totalPerPerson = 0;
+    updateValues();
 }
 
 const btnReset = document.querySelector('#btn-reset');

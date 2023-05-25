@@ -48,7 +48,7 @@ const tipAmountDiv = document.createElement('div');
 const totalPerPersonDiv = document.createElement('div');
 const resetButtonDiv = document.createElement('div');
 
-let tipAmountPerPeople = 0;
+let tipAmountPerPerson = 0;
 let totalPerPerson = 0;
 
 tipAmountDiv.innerHTML = `
@@ -56,7 +56,7 @@ tipAmountDiv.innerHTML = `
         Tip amount
     </div>
     <div>
-        $${tipAmountPerPeople}
+        $${tipAmountPerPerson}
     </div>
 `
 
@@ -71,7 +71,7 @@ totalPerPersonDiv.innerHTML = `
 
 resetButtonDiv.innerHTML = `
     <div id="resetButtonDiv">
-        <button>RESET</button>
+        <button id="btn-reset">RESET</button>
     </div>
 `
 
@@ -138,4 +138,18 @@ const numPeopleInput = document.querySelector('#numPeopleInput');
 numPeopleInput.addEventListener("input", () => {
     numOfPeople = numPeopleInput.value;
     console.log(numOfPeople);
+});
+
+//Testing some functionalites
+function calcTip(billAmount, tipAmount, peopleAmount) {
+    return tipAmountPerPerson = ( billAmount * (tipAmount / 100) );
+}
+
+function calcTipPerPerson(billAmount, tipAmount, peopleAmount) {
+    return tipAmountPerPerson = ( billAmount * (tipAmount / 100) ) / peopleAmount;
+}
+
+const btnReset = document.querySelector('#btn-reset');
+btnReset.addEventListener("click", () => {
+    console.log(calcTip(bill, tipAmount, numOfPeople));
 });

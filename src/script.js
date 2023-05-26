@@ -37,7 +37,7 @@ tipSelectDiv.innerHTML = `
         <button id="btn-15" value="15">15%</button>
         <button id="btn-25" value="25">25%</button>
         <button id="btn-50" value="50">50%</button>
-        <input type="number" placeholder="Custom %" id="tipAmountInput" />
+        <input type="number" placeholder="Custom" id="tipAmountInput" />
     </div>
 `
 peopleNumDiv.innerHTML = `

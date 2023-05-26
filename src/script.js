@@ -5,12 +5,17 @@ main.setAttribute('id', 'container__main');
 
 const leftSection = document.createElement('div');
 const rightSection = document.createElement('div');
+const rightSectionTop = document.createElement('div');
+const rightSectionBotton = document.createElement('div');
 
 leftSection.setAttribute('id', 'container__main_left');
 leftSection.classList.add('padded');
 
 rightSection.setAttribute('id', 'container__main_right');
 rightSection.classList.add('padded');
+
+rightSectionTop.setAttribute('id', 'container__main_right_top');
+rightSectionBotton.setAttribute('id', 'container__main_right_bottom');
 
 const billDiv = document.createElement('div');
 const tipSelectDiv = document.createElement('div');
@@ -40,7 +45,7 @@ peopleNumDiv.innerHTML = `
         Number of People
     </div>
     <div>
-        <input type="number" placeholder="0" id="numPeopleInput" />
+        <input type="number" placeholder="1" value="1" id="numPeopleInput" />
     </div>
 `
 
@@ -52,20 +57,26 @@ let tipAmountPerPerson = 0;
 let totalPerPerson = 0;
 
 tipAmountDiv.innerHTML = `
-    <div>
-        Tip amount p/ person
-    </div>
-    <div>
-        <span id="tipAmountPersonSpan">${tipAmountPerPerson}</span>
+    <div class="leftDivsFormat">
+        <div>
+            <p class="white-text">Tip amount </p>
+            <p class="personP">/ person</p>
+        </div>
+        <div>
+            <span id="tipAmountPersonSpan" class="results">$${tipAmountPerPerson}</span>
+        </div>
     </div>
 `
 
 totalPerPersonDiv.innerHTML = `
-    <div>
-        Total p/ person
-    </div>
-    <div>
-        <span id="totalAmountPersonSpan">${totalPerPerson}</span>
+    <div class="leftDivsFormat">
+        <div>
+            <p class="white-text">Total </p>
+            <p class="personP">/ person</p>
+        </div>
+        <div>
+            <span id="totalAmountPersonSpan" class="results">$${totalPerPerson}</span>
+        </div>
     </div>
 `
 
@@ -80,13 +91,16 @@ root.appendChild(main);
 main.appendChild(leftSection);
 main.appendChild(rightSection);
 
+rightSection.appendChild(rightSectionTop);
+rightSection.appendChild(rightSectionBotton);
+
 leftSection.appendChild(billDiv);
 leftSection.appendChild(tipSelectDiv);
 leftSection.appendChild(peopleNumDiv);
 
-rightSection.appendChild(tipAmountDiv);
-rightSection.appendChild(totalPerPersonDiv);
-rightSection.appendChild(resetButtonDiv);
+rightSectionTop.appendChild(tipAmountDiv);
+rightSectionTop.appendChild(totalPerPersonDiv);
+rightSectionBotton.appendChild(resetButtonDiv);
 
 const billInput = document.querySelector('#billInput'); 
 

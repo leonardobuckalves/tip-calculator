@@ -52,6 +52,13 @@ button {
     margin: .5rem 0;
 }
 
+.white-text {
+    color: white;
+}
+
+.personP {
+    color: #CBE4DE;
+}
 
 #container__main {
     background-color: white;
@@ -89,4 +96,33 @@ button {
 
 #resetButtonDiv {
     align-self: flex-end;
+}
+
+#btn-reset {
+    width: 100%;
+    background-color: #0E8388;
+    padding: .5rem;
+}
+.results {
+    color: #97DECE;
+    font-size: 42px;
+}
+
+.leftDivsFormat {
+    display: flex;
+    justify-content: space-between;
+}
+
+#container__main_right_top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+#container__main_right_bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
 }

@@ -63,7 +63,7 @@ tipAmountDiv.innerHTML = `
             <p class="personP">/ person</p>
         </div>
         <div>
-            <span id="tipAmountPersonSpan" class="results">$${tipAmountPerPerson}</span>
+            <span id="tipAmountPersonSpan" class="results">$${tipAmountPerPerson.toFixed(2)}</span>
         </div>
     </div>
 `
@@ -75,7 +75,7 @@ totalPerPersonDiv.innerHTML = `
             <p class="personP">/ person</p>
         </div>
         <div>
-            <span id="totalAmountPersonSpan" class="results">$${totalPerPerson}</span>
+            <span id="totalAmountPersonSpan" class="results">$${totalPerPerson.toFixed(2)}</span>
         </div>
     </div>
 `
@@ -163,8 +163,8 @@ const totalAmountPersonSpan = document.querySelector('#totalAmountPersonSpan');
 const updateValues = () => {
     calcTip(bill, tipAmount, numOfPeople);
     calcBill(bill, numOfPeople, tipAmountPerPerson);
-    tipAmountPersonSpan.innerHTML = `$${tipAmountPerPerson}`;
-    totalAmountPersonSpan.innerHTML = `$${totalPerPerson}`;
+    tipAmountPersonSpan.innerHTML = `$${tipAmountPerPerson.toFixed(2)}`;
+    totalAmountPersonSpan.innerHTML = `$${totalPerPerson.toFixed(2)}`;
 }
 
 const clearPercentageInput = () => {
@@ -176,14 +176,16 @@ function calcBill(billAmount, peopleAmount, tipAmount) {
     {
         peopleAmount = 1;
     }
-    return totalPerPerson = (billAmount / peopleAmount) + tipAmount;
+    totalPerPerson = (billAmount / peopleAmount) + tipAmount
+    return totalPerPerson.toFixed(2);
 }
 function calcTip(billAmount, tipAmount, peopleAmount) {
     if (peopleAmount == NaN || peopleAmount == undefined || peopleAmount == 0 || peopleAmount == "")
     {
         peopleAmount = 1;
     }
-    return tipAmountPerPerson = ( billAmount * (tipAmount / 100) ) / peopleAmount;
+    tipAmountPerPerson = ( billAmount * (tipAmount / 100) ) / peopleAmount
+    return tipAmountPerPerson.toFixed(2);
 }
 
 const resetEverything = () => {

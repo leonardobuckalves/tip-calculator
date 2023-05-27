@@ -25,19 +25,19 @@ input[type=number] {
     border-radius: 4px;
     background-color: #b6d8d7;
     color: #2E4F4F;
-    font-size: 24px;
+    font-size: 1.5em;
     padding: .3rem;
 }
 
 input[type=number]::placeholder {
     color: #2E4F4F;
-    font-size: 22px
+    font-size: 1.5rem;
 }
 
 button {
     background-color: #2E4F4F;
     color: white;
-    font-size: 24px;
+    font-size: 1.5rem;
     cursor: pointer;
     text-decoration: none;
     border: none;
@@ -62,8 +62,7 @@ button {
 
 #container__main {
     background-color: white;
-    width: 800px;
-    height: 400px;
+    max-width: 50rem;
     border-radius: 15px;
     display: flex;
     justify-content: space-evenly;
@@ -126,25 +125,17 @@ button {
     justify-content: flex-end;
     flex: 1;
 }
-
-@media(max-width: 820px) {
-    body {
-        display: flex;
-        justify-content: center;
-        margin-top: 5rem;
-    }
-    #root {
-        margin-bottom: 1.3rem;
-    }
+#tipAmountInput::placeholder {
+    font-size: 1rem;
+    text-align: center;
+}
+@media(max-width: 40em) {
     #container__main {
         flex-direction: column;
-        width: 400px;
-        height: 100%;
     }
-
     #container__main_left {
-        margin: .5rem .5rem .5rem .5rem;
-        padding: 1.3rem 1.3rem .5rem 1.3rem;
+        margin: .5rem;
+        padding: .5rem 1.3em;
     }
     #container__main_right {
         margin: .5rem 1.3rem 1.3rem 1.3rem;

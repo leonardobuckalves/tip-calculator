@@ -1,6 +1,6 @@
 # Tip calculator
 
-[![Generic badge](https://img.shields.io/badge/Project_status-In_developtment-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Project_status-Finished-<COLOR>.svg)](https://shields.io/)
 
 Calculate the tip amount
 

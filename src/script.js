@@ -27,7 +27,7 @@ let numOfPeople = 0;
 
 billDiv.innerHTML = `
     <div class ="marginTop05">Bill</div>
-    <div><input type="number" placeholder="$" id="billInput" /></div>
+    <div><input type="number" placeholder="$" id="billInput" min="0" max="999999"/></div>
 `
 tipSelectDiv.innerHTML = `
     <div class ="marginTop05">Select Tip %</div>
@@ -37,7 +37,7 @@ tipSelectDiv.innerHTML = `
         <button id="btn-15" value="15">15%</button>
         <button id="btn-25" value="25">25%</button>
         <button id="btn-50" value="50">50%</button>
-        <input type="number" placeholder="Custom" id="tipAmountInput" />
+        <input type="number" placeholder="Custom" id="tipAmountInput" min="0" max="100"/>
     </div>
 `
 peopleNumDiv.innerHTML = `

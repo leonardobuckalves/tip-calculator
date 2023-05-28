@@ -29,6 +29,10 @@ input[type=number] {
     padding: .3rem;
 }
 
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 input[type=number]::placeholder {
     color: #2E4F4F;
     font-size: 1.5rem;
@@ -71,6 +75,7 @@ button {
 #container__main_right{
     background-color: #2E4F4F;
     margin: 1.3rem 1.3rem 1.3rem .5rem;
+    max-width: 28rem;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -79,6 +84,7 @@ button {
 
 #container__main_left {
     margin: 1.3rem .5rem 1.3rem 1.3rem;
+    max-width: 28rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
